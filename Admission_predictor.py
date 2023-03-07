@@ -61,6 +61,6 @@ research = st.radio('Research Experience', options=[0, 1], index=0,key='research
 toefl_prediction = predict_admission_chance_toefl(toefl_model, toefl_score, cgpa, university_rating, sop, lor, research)
 
 # Display the predicted admission chance to the user
-st.write('## Predicted Admission Chance (GRE Score)')
+st.write('## Predicted Admission Chance (TOEFL Score)')
 st.write(f'{toefl_prediction:.2%}')
 
