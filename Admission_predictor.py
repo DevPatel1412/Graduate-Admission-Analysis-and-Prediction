@@ -11,7 +11,7 @@ from sklearn.preprocessing import PolynomialFeatures
 gre_model = pickle.load(open("C:/Users/Dev Patel/Documents/Collage_files/Team_4331 (COE) Project/trained_gre_model.sav", 'rb'))
 toefl_model = pickle.load(open("C:/Users/Dev Patel/Documents/Collage_files/Team_4331 (COE) Project/trained_toefl_model.sav", 'rb'))
 
-# Animation with lottie (loading image throgh url)
+# Animation with lottie (loading gif files throgh url)
 def lottieurl_load(url: str):
     r= requests.get(url)
     if r.status_code !=200:
