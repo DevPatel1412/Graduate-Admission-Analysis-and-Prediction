@@ -18,7 +18,7 @@ def lottieurl_load(url: str):
         return None
     return r.json()
 lottie_img = lottieurl_load("https://assets9.lottiefiles.com/packages/lf20_ggt4iszh.json")
-st.header("Know Your Chance For the Study Abroad")
+st.title("Discover Your Admission Odds Today!")
 col1, col2, col3 = st.columns(3)
 with col1:
     st.write(' ')
