@@ -8,8 +8,8 @@ from streamlit_lottie import st_lottie
 from sklearn.preprocessing import PolynomialFeatures
 
 # Load the saved models
-gre_model = pickle.load(open("C:/Users/Dev Patel/Documents/Collage_files/Team_4331 (COE) Project/trained_gre_model.sav", 'rb'))
-toefl_model = pickle.load(open("C:/Users/Dev Patel/Documents/Collage_files/Team_4331 (COE) Project/trained_toefl_model.sav", 'rb'))
+gre_model = pickle.load(open("trained_gre_model.sav", 'rb'))
+toefl_model = pickle.load(open("trained_toefl_model.sav", 'rb'))
 
 # Animation with lottie (loading gif files throgh url)
 def lottieurl_load(url: str):
