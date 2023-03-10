@@ -2,12 +2,31 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
+import requests
+import json
+from streamlit_lottie import st_lottie
 from sklearn.preprocessing import PolynomialFeatures
 
 # Load the saved models
 gre_model = pickle.load(open("C:/Users/Dev Patel/Documents/Collage_files/Team_4331 (COE) Project/trained_gre_model.sav", 'rb'))
 toefl_model = pickle.load(open("C:/Users/Dev Patel/Documents/Collage_files/Team_4331 (COE) Project/trained_toefl_model.sav", 'rb'))
 
+# Animation with lottie (loading image throgh url)
+def lottieurl_load(url: str):
+    r= requests.get(url)
+    if r.status_code !=200:
+        return None
+    return r.json()
+lottie_img = lottieurl_load("https://assets9.lottiefiles.com/packages/lf20_ggt4iszh.json")
+st.header("Know Your Chance For the Study Abroad")
+col1, col2, col3 = st.columns(3)
+with col1:
+    st.write(' ')
+with col2:
+    st_lottie(lottie_img,speed=1,reverse=False,loop=True,quality="medium",height=250,width=250,key=None)
+with col3:
+    st.write(' ')
+    
 # Define a function to predict the admission chance for gre
 def predict_admission_chance_gre(model, gre_score, cgpa, university_rating, sop, lor, research):
     # Create a NumPy array with the input values
